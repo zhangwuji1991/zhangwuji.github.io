@@ -1,6 +1,32 @@
-<!DOCTYPE html>
 <html>
-<body>
-<h1>这是我使用github pages搭建的个人站点。</h1>
-</body>
+	<head>
+		<title>浠婃棩澶存潯鏁版嵁</title>
+	</head>
+	<body>
+		
+	</body>
+	<!--<script src="js/jquery-3.2.0.min.js" type="text/javascript" charset="utf-8"></script>-->
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		function getData() {
+			var timestamp = Date.parse(new Date());
+			$.ajax({
+				dataType:"jsonp",
+				url:"https://m.toutiao.com/list/?tag=__all__",
+				async:true,
+				data:{
+					"count":20,
+					"format":"json_raw",
+					"as":"A1A5F9C1E090451",
+					"min_behot_time":timestamp
+				},
+				success:function(data) {
+					console.log(data.data[0])
+					console.log(data.data[0].abstract)
+					document.write(data.data[0].abstract)
+				}
+			});
+		}
+		getData()
+	</script>
 </html>
