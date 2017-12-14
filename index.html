@@ -1,33 +1,19 @@
-<html>
-	<head>
-		<title>今日头条数据</title>
-		<meta charset="UTF-8"/>
-	</head>
-	<body>
-		
-	</body>
-	<!--<script src="js/jquery-3.2.0.min.js" type="text/javascript" charset="utf-8"></script>-->
-	<script src="/js/jq.js"></script>
-	<script type="text/javascript">
-		function getData() {
-			var timestamp = Date.parse(new Date());
-			$.ajax({
-				dataType:"jsonp",
-				url:"https://m.toutiao.com/list/?tag=__all__",
-				async:true,
-				data:{
-					"count":20,
-					"format":"json_raw",
-					"as":"A1A5F9C1E090451",
-					"min_behot_time":timestamp
-				},
-				success:function(data) {
-					console.log(data.data[0])
-					console.log(data.data[0].abstract)
-					document.write(data.data[0].abstract)
-				}
-			});
-		}
-		getData()
-	</script>
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>React Music Player</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+   	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jplayer/2.9.2/jplayer/jquery.jplayer.min.js"></script>
+</head>
+
+<body class="view-login">
+	<div id="player"></div>
+    <div id="root"></div>
+<script type="text/javascript" src="/js/main-b5782c64d6e27f61c36c.min.js"></script></body>
+
 </html>
