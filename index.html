@@ -14,6 +14,23 @@
 <body class="view-login">
 	<div id="player"></div>
     <div id="root"></div>
-<script type="text/javascript" src="/js/main-b5782c64d6e27f61c36c.min.js"></script></body>
+	
+<script type="text/javascript" src="/js/main-b5782c64d6e27f61c36c.min.js"></script></body><script type="text/javascript">
+		window.onload=function(){
+			$.ajax({
+				type:"post",
+				url:"http://localhost:8888/login",
+				async:true,
+				dataType:'json',
+				data:{
+					username:'admin',
+					password:'admin8882'
+				},
+				success:function(data){
+					console.log(data)
+				}
+			});
+		}
+	</script>
 
 </html>
